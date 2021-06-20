@@ -104,9 +104,10 @@ describe('Foscam: Network', function() {
             assertCalled(cam.get, 'setFtpConfig', {usrName: '', pwd: ''});
         });
 
-        it('test -- not implemented', function() {
+        it('test', function() {
             cam.testFtpServer();
-            assertCalled(cam.notImplemented);
+            assertCalled(cam.get, 'getFtpConfig');
+            assertCalled(cam.get, 'setFtpConfig', {usrName: '', pwd: ''});
         });
     });
 
